@@ -1,0 +1,30 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<!-- import paper elements -->
+<link rel="import" href="bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="bower_components/paper-card/paper-card.html">
+
+<dom-module id="test-carousel">
+  <link rel="import" type="css" href="test-carousel.css">
+  <template>
+    <!-- HTML goes here -->
+	<div class="central_panel">
+	<paper-card heading="Current Selection" elevation="5">
+	  <div class="card-image"><img src={{mysrc}} id="myimage">
+	  </div>
+
+	  <!-- i want to display image name here -->
+	  <div class="card-content">{{title}}</div>
+
+	  <div class="card-actions">
+	    <paper-icon-button icon="arrow-back" on-click="prevImage"></paper-icon-button>
+	    <paper-icon-button icon="arrow-forward" on-click="nextImage"></paper-icon-button>
+	  </div>
+
+	</paper-card>
+	</div>
+
+  </template>
+</dom-module>
+
+<script src="test-carousel.js"></script>
