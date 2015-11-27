@@ -47,9 +47,13 @@ paper-card {
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-  /*width: auto;*/
-  /*transform-origin: 50% 50%;*/
+
+/*  width: auto;
+  transform-origin: 50% 50%;*/
 }
+
+
+
 
 #image_collection {
   @apply(--layout-horizontal);
@@ -57,7 +61,13 @@ paper-card {
 }
 
 div img {
+  position: relative;
   height: 100%;
   left: 50%;
-  top: 50%  
+  top: 50% ; 
+  transform: translate(-50%,-50%);
+   @apply(--layout-horizontal);
+   @apply(--layout-center-justified);
 }
+
+/* ask about why images are cutting so badly */
