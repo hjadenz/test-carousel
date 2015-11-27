@@ -17,6 +17,7 @@
     transform: rotateY(360deg);
   }
 }*/
+
 :host([slider]) img {
   animation: 1s linear;
 }
@@ -45,7 +46,18 @@ paper-card {
   height: 100%;
   left: 50%;
   top: 50%;
-  /*transform-origin: 50% 50%;*/
   transform: translate(-50%,-50%);
   /*width: auto;*/
+  /*transform-origin: 50% 50%;*/
+}
+
+#image_collection {
+  @apply(--layout-horizontal);
+  @apply(--layout-around-justified);
+}
+
+div img {
+  height: 100%;
+  left: 50%;
+  top: 50%  
 }

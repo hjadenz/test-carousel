@@ -8,21 +8,24 @@
   <link rel="import" type="css" href="test-carousel.css">
   <template>
     <!-- HTML goes here -->
-	<div class="central_panel">
-	<paper-card heading="Current Selection" elevation="5">
-	  <div class="card-image"><img src={{mysrc}} id="myimage">
-	  </div>
+  <div class="central_panel">
+  <paper-card heading="Current Selection" elevation="5">
+    <div id="image_collection">
+      <div class="card-image"><img src={{myprev}} id="prev_image"></div>
+      <div class="card-image"><img src={{mysrc}} id="myimage"></div>
+      <div class="card-image"><img src={{mynext}} id="next_image"></div>   
+    </div> 
 
-	  <!-- i want to display image name here -->
-	  <div class="card-content">{{title}}</div>
+      <!-- i want to display image name here -->
+      <div class="card-content">{{title}}</div>
 
-	  <div class="card-actions">
-	    <paper-icon-button icon="arrow-back" on-click="prevImage"></paper-icon-button>
-	    <paper-icon-button icon="arrow-forward" on-click="nextImage"></paper-icon-button>
-	  </div>
+      <div class="card-actions">
+        <paper-icon-button icon="arrow-back" on-click="prevImage"></paper-icon-button>
+        <paper-icon-button icon="arrow-forward" on-click="nextImage"></paper-icon-button>
+      </div>
 
-	</paper-card>
-	</div>
+  </paper-card>
+  </div>
 
   </template>
 </dom-module>
