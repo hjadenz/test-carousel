@@ -11,17 +11,23 @@
   <div class="central_panel">
   <paper-card heading="Current Selection" elevation="5">
     <div id="image_collection">
-      <div class="card-image"><img src={{myprev}} id="prev_image"></div>
-      <div class="card-image"><img src={{mysrc}} id="myimage"></div>
-      <div class="card-image"><img src={{mynext}} id="next_image"></div>   
+      <div class="visible"><img src="/carousel/images/9.png" id="0"></div>
+      <div class="visible"><img src="/carousel/images/1.jpg" id="1"></div>
+      <div class="visible"><img src="/carousel/images/2.jpg" id="2"></div>
+      <div class="invisible"><img src="/carousel/images/3.jpg" id="3"></div>
+      <div class="invisible"><img src="/carousel/images/4.jpg" id="4"></div>
+      <div class="invisible"><img src="/carousel/images/5.jpg" id="5"></div>
+      <div class="invisible"><img src="/carousel/images/6.jpg" id="6"></div>
+      <div class="invisible"><img src="/carousel/images/7.jpg" id="7"></div>
+      <div class="invisible"><img src="/carousel/images/8.jpg" id="8"></div>
+      <div class="invisible"><img src="/carousel/images/9.png" id="9"></div>
     </div> 
-
       <!-- i want to display image name here -->
       <div class="card-content">{{title}}</div>
 
       <div class="card-actions">
-        <paper-icon-button icon="arrow-back" on-click="prevImage"></paper-icon-button>
-        <paper-icon-button icon="arrow-forward" on-click="nextImage"></paper-icon-button>
+        <paper-icon-button icon="arrow-back" on-click="prevImage" id="prevButton" disabled={{prevValue}}></paper-icon-button>
+        <paper-icon-button icon="arrow-forward" on-click="nextImage" id="nextButton" disabled={{nextValue}}></paper-icon-button>
       </div>
 
   </paper-card>

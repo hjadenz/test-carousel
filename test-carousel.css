@@ -1,43 +1,28 @@
-
-/*make it slide one image to the left*/
-
-@keyframes slider {
-  from {
-    transform: translate(0,0);
-  } to {
-    transform: translate(3em,0);
-  }
-}
-
-/*@keyframes spin {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}*/
-
-:host([slider]) img {
-  animation: 1s linear;
-}
-
 paper-card {
   width: 100%;
+  overflow: hidden;
 }
 
 .central_panel {
   padding: 10px;
   text-align: center;
+  width: 1000px;
+  /*@apply(--layout-center-justified);*/
+  /*overflow: hidden;*/
+  /*position: relative;*/
 }
 
-.card-image {
+
+.visible {
   position: relative;
   width: 300px;
   height: 200px;
+  min-width: 300px;
+  min-height: 200px;
   overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 16px;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
   /*animation: 2s linear infinite spin;*/
 }
 
@@ -53,11 +38,10 @@ paper-card {
 }
 
 
-
-
 #image_collection {
   @apply(--layout-horizontal);
-  @apply(--layout-around-justified);
+  /*@apply(--layout-around-justified);*/
+  width: 1000px;
 }
 
 div img {
@@ -66,8 +50,11 @@ div img {
   left: 50%;
   top: 50% ; 
   transform: translate(-50%,-50%);
-   @apply(--layout-horizontal);
-   @apply(--layout-center-justified);
+   /*@apply(--layout-horizontal);*/
+   /*@apply(--layout-center-justified);*/
+  float: left;
 }
 
-/* ask about why images are cutting so badly */
+.invisible {
+  display: none;
+}
