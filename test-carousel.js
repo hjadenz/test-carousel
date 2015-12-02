@@ -1,6 +1,5 @@
 Polymer({
   is: 'test-carousel',
-
   properties: {
     pressed: {
       type: Boolean,
@@ -8,7 +7,7 @@ Polymer({
       notify: true,
       reflectToAttribute: true
     },
-    title: {
+    count: {
       type: Number,
       value: 1,
       reflectToAttribute: true
@@ -24,16 +23,20 @@ Polymer({
     nextValue: {
       type: Boolean,
       value: false
+    },
+    imgList: {
+      type: Array,
+      value: []
     }
   },
 
   nextImage: function(){
-    this.title++;
+    this.count++;
     // return entire dom node of the div
     var myCollection = this.$.image_collection;
-    var myImages = this.$.image_collection.children;;
+    var myImages = this.$.image_collection.children;
 
-    if(this.title == this.numImages ){
+    if(this.count == this.numImages ){
       this.nextValue = true;
     }
 
@@ -41,15 +44,7 @@ Polymer({
       this.prevValue = false;
     }
 
-    // for(var i=-1; i <1 ; i++){
-    //   myImages[(this.title + i)].animate([
-    //     {transform: "translateX(-100px)"}, 
-    //     {transform: "translateX(-200px)"}
-    //   ], {
-    //       duration: 500
-    //   });
-    // }
-    var mynum = this.title;
+    var mynum = this.count;
     myImages[(mynum + 1)].className = "visible";   
 
     var player = myCollection.animate([
@@ -61,26 +56,17 @@ Polymer({
     });
     
     player.onfinish = function(e) {
-      console.log("FINISH");
-      myImages[(mynum - 2)].className = "invisible";    
-      // myImages[(mynum + 1)].className = "visible";    
+      myImages[(mynum - 2)].className = "invisible";     
     }
 
   },
 
   prevImage: function(){
-    this.title--;
+    this.count--;
     var myCollection = this.$.image_collection;
     var myImages = this.$.image_collection.children;   
-     
-    // if(this.title == 1) {
-    // } else if (this.title == 0) {
-    //   this.title= this.numImages;
-    // } else {
-    // }
 
-    if(this.title == 1) {
-      console.log("OI");
+    if(this.count == 1) {
       this.prevValue = true;
     }
 
@@ -89,7 +75,7 @@ Polymer({
     }
 
 
-    var mynum = this.title;
+    var mynum = this.count;
     myImages[(mynum - 1)].className = "visible";  
 
     var player = myCollection.animate([
@@ -101,8 +87,6 @@ Polymer({
     });
 
     player.onfinish = function(e) {
-      console.log("FINISH");
-      // myImages[(mynum - 1)].className = "visible";    
       myImages[(mynum + 2)].className = "invisible";    
     }
   }
